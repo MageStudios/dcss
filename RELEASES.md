@@ -1,6 +1,6 @@
 # Newest RC
 
-https://raw.githubusercontent.com/magus/dcss/v1.11.7/output/magus.rc
+https://raw.githubusercontent.com/magus/dcss/v1.0.0/output/SlipMage.rc
 
 # What's new?
 
@@ -10,7 +10,7 @@ Follow the instructions below to easily see the differences!
 
 1. Copy your **Version** string
 
-    ![Example screenshot highlighting magus.rc version string](https://raw.githubusercontent.com/magus/dcss/master/static/version-string-example.97956d.png)
+    ![Example screenshot highlighting magus.rc version string](https://raw.githubusercontent.com/MageStudios/dcss/master/static/version-string-example.97956d.png)
 
     _Example_
     ```
