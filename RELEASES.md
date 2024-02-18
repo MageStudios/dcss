@@ -18,7 +18,7 @@ Follow the instructions below to easily see the differences!
 1. Using the URL below, replace **`<Version>`** with your **Version**
 
     ```
-    https://github.com/MageStudios/dcss/compare/<Version>...v1.11.7
+    https://github.com/MageStudios/dcss/compare/<Version>...v1.0.1
     ```
     _Example_: https://github.com/MageStudios/dcss/compare/v1.0.0...v1.0.1
 
