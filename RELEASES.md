@@ -14,7 +14,7 @@ Follow the instructions below to easily see the differences!
 
     _Example_
     ```
-    v1.11.6
+    v1.0.1
     ```
 
 1. Using the URL below, replace **`<Version>`** with your **Version**
@@ -22,7 +22,7 @@ Follow the instructions below to easily see the differences!
     ```
     https://github.com/magus/dcss/compare/<Version>...v1.11.7
     ```
-    _Example_: https://github.com/magus/dcss/compare/v1.11.6...v1.11.7
+    _Example_: https://github.com/magus/dcss/compare/v1.0.0...v1.0.1
 
 1. Paste the new URL into your browser and discover all the changes since you last copied the RC, Enjoy! 😄
 
