@@ -10,8 +10,6 @@ Follow the instructions below to easily see the differences!
 
 1. Copy your **Version** string
 
-    ![Example screenshot highlighting MageStudios.rc version string](https://raw.githubusercontent.com/MageStudios/dcss/master/static/version-string-example.97956d.png)
-
     _Example_
     ```
     {{ExampleVersion}}
