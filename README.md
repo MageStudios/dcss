@@ -4,9 +4,9 @@
 
 ## tl;dr
 
-**[Click here to copy the latest SlipMage.rc](https://github.com/MageStudios/dcss/raw/master/output/SlipMage.rc)**
+**[Click here to copy the latest MageStudios.rc](https://github.com/MageStudios/dcss/raw/master/output/MageStudios.rc)**
 
-## SlipMage.rc generator
+## MageStudios.rc generator
 
 generate rc for dcss
 
