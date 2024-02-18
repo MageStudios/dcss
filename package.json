@@ -1,0 +1,19 @@
+{
+  "name": "dcss",
+  "version": "1.11.7",
+  "main": "index.js",
+  "repository": "git@github.com:magus/dcss.git",
+  "author": "magus <noah@iamnoah.com>",
+  "license": "MIT",
+  "scripts": {
+    "compile:debug": "node --inspect-brk compile-rc/compile.js",
+    "compile": "node compile-rc/compile.js",
+    "start": "yarn compile"
+  },
+  "devDependencies": {
+    "luamin": "^1.0.4"
+  },
+  "dependencies": {
+    "luxon": "^1.25.0"
+  }
+}

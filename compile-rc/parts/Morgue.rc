@@ -1,0 +1,166 @@
+dump_item_origins = all
+dump_message_count = 100
+dump_order  = header,hiscore,stats,misc,mutations,skills,spells,inventory
+dump_order += overview,screenshot,monlist,messages,skill_gains,action_counts
+dump_order += vaults,notes,kills,xp_by_level,skill_gains,action_counts,screenshots,kills_by_place,turns_by_place
+
+note_hp_percent = 25
+note_all_skill_levels = true
+note_chat_messages = false
+user_note_prefix = >>
+
+note_items += artefact
+note_items += experience,of Zot,acquirement,Archmagi
+note_items += crystal plate,pearl dragon scales,gold dragon scales
+
+# note some auto inscribes
+# do not match curare
+note_messages += (?<!cu)rare
+
+note_messages += You feel monstrous
+note_messages += You pass through the gate
+note_messages += [bB]anish.*Abyss
+note_messages += cast .* Abyss
+note_messages += protects you from harm
+note_messages += You fall through a shaft
+
+# note when things come into view with unrands
+# unrands are not identified properly in notes
+# see https://github.com/crawl/crawl/issues/1580
+# fixed as of 0.27.0, can remove when we drop support for versions less than 0.27.0
+# hardcode note_messages for unrands as a temporary work around
+# http://crawl.chaosforge.org/List_of_unrands
+#short blades
+note_messages += wielding.*?Vampire's Tooth
+note_messages += wielding.*?dagger "Morg"
+note_messages += wielding.*?Spriggan's Knife
+note_messages += wielding.*?arc blade
+note_messages += wielding.*?captain's cutlass
+note_messages += wielding.*?quick blades "Gyre" and "Gimble"
+# long blades
+note_messages += wielding.*?Singing Sword
+note_messages += wielding.*?sword of Zonguldrok
+note_messages += wielding.*?Maxwell's thermic engine
+note_messages += wielding.*?autumn katana
+note_messages += wielding.*?demon blade "Leech"
+note_messages += wielding.*?zealot's sword
+note_messages += wielding.*?sword of Power
+note_messages += wielding.*?sword of Cerebov
+note_messages += wielding.*?plutonium sword
+# staves
+note_messages += wielding.*?staff of Dispater
+note_messages += wielding.*?sceptre of Asmodeus
+note_messages += wielding.*?staff of Olgreb
+note_messages += wielding.*?Elemental Staff
+note_messages += wielding.*?staff of Wucad Mu
+note_messages += wielding.*?staff of Battle
+note_messages += wielding.*?Majin-Bo
+note_messages += wielding.*??lajatang of Order
+# axes
+note_messages += wielding.*?mithril axe "Arga"
+note_messages += wielding.*?obsidian axe
+note_messages += wielding.*?Wrath of Trog
+note_messages += wielding.*?frozen axe "Frostbite"
+note_messages += wielding.*?Axe of Woe
+# polearms
+note_messages += wielding.*?lance "Wyrmbane"
+note_messages += wielding.*?trident of the Octopus King
+note_messages += wielding.*?demon trident "Rift"
+note_messages += wielding.*?glaive of the Guard
+note_messages += wielding.*?glaive of Prune
+note_messages += wielding.*?scythe of Curses
+note_messages += wielding.*?scythe "Finisher"
+# maces & flails
+note_messages += wielding.*?shillelagh "Devastator"
+note_messages += wielding.*?whip "Snakebite"
+note_messages += wielding.*?morningstar "Eos"
+note_messages += wielding.*?demon whip "Spellbinder"
+note_messages += wielding.*?sceptre of Torment
+note_messages += wielding.*?great mace "Undeadhunter"
+note_messages += wielding.*?great mace "Firestarter"
+note_messages += wielding.*?mace of Variability
+note_messages += wielding.*?giant club "Skullcrusher"
+note_messages += wielding.*?dark maul
+# ranged weapons
+note_messages += wielding.*?sling "Punk"
+note_messages += wielding.*?longbow "Zephyr"
+note_messages += wielding.*?storm bow
+note_messages += wielding.*?arbalest "Damnation"
+note_messages += wielding.*?heavy crossbow "Sniper"
+# armours
+note_messages += wearing.*?robe of Folly
+note_messages += wearing.*?robe of Misfortune
+note_messages += wearing.*?robe of Augmentation
+note_messages += wearing.*?robe of Night
+note_messages += wearing.*?robe of Clouds
+note_messages += wearing.*?robe of Vines
+note_messages += wearing.*?skin of Zhor
+note_messages += wearing.*?salamander hide armour
+note_messages += wearing.*?Cigotuvi's embrace
+note_messages += wearing.*?moon troll leather armour
+note_messages += wearing.*?Kryia's mail coat
+note_messages += wearing.*?faerie dragon scales
+note_messages += wearing.*?Lear's hauberk
+note_messages += wearing.*?Maxwell's patent armour
+note_messages += wearing.*?scales of the Dragon King
+note_messages += wearing.*?orange crystal plate armour
+# shields
+note_messages += wearing.*?warlock's mirror
+note_messages += wearing.*?shield of Resistance
+note_messages += wearing.*?shield of the Gong
+note_messages += wearing.*?tower shield of Ignorance
+# cloaks
+note_messages += wearing.*?cloak of the Thief
+note_messages += wearing.*?ratskin cloak
+note_messages += wearing.*?cloak of Starlight
+note_messages += wearing.*?dragonskin cloak
+# headgear
+note_messages += wearing.*?hat of the Bear Spirit
+note_messages += wearing.*?crown of Dyrovepreva
+note_messages += wearing.*?mask of the Dragon
+note_messages += wearing.*?hat of the Alchemist
+note_messages += wearing.*?hat of Pondering
+note_messages += wearing.*?hood of the Assassin
+# gloves
+note_messages += wearing.*?gauntlets of War
+note_messages += wearing.*?fencer's gloves
+# bardings
+note_messages += wearing.*?Black Knight's barding
+note_messages += wearing.*?lightning scales
+# rings
+note_messages += wearing.*?ring of Shadows
+note_messages += wearing.*?ring of the Hare
+note_messages += wearing.*?ring of the Mage
+note_messages += wearing.*?ring of the Octopus King
+note_messages += wearing.*?ring of the Tortoise
+# amulets
+note_messages += wearing.*?brooch of Shielding
+note_messages += wearing.*?necklace of Bloodlust
+note_messages += wearing.*?amulet of the Four Winds
+note_messages += wearing.*?amulet of the Air
+note_messages += wearing.*?macabre finger necklace
+note_messages += wearing.*?amulet of Vitality
+
+
+# note treasure troves and requirements for parsing
+# https://regexr.com/5fqgo
+note_messages += This trove
+note_messages += This portal proclaims the superiority
+
+# record spell locations
+# https://sourcegraph.com/github.com/crawl/crawl@a8ba66830452fff8a85bb735c9ba5bc5ec7c9bfa/-/blob/crawl-ref/source/spl-book.cc?L424:15
+note_messages += You add the spell
+
+# record gozag shop creation
+# https://sourcegraph.com/github.com/crawl/crawl@a8ba66830452fff8a85bb735c9ba5bc5ec7c9bfa/-/blob/crawl-ref/source/god-abil.cc?L2911
+note_messages += invites you to visit
+
+# Noteable monsters
+# Undead
+note_monsters += ancient lich,curse skull,curse toe,greater mummy
+# Depths
+note_monsters += caustic shrike
+# Special hall_of_zot spawns
+note_monsters += killer klown,electric golem,orb of fire
+# Other
+note_monsters += silver star,pearl dragon

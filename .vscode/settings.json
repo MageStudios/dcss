@@ -1,0 +1,8 @@
+{
+  "files.associations": {
+    "*.rc": "diff"
+  },
+  "search.exclude": {
+    "output/magus.rc": true
+  }
+}

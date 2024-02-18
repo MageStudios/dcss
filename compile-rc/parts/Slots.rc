@@ -1,0 +1,325 @@
+###########
+# Sorting #
+###########
+# sort_menus = [menu:](true | false | auto:X)[:sort_order]
+#         Controls if and how items are sorted in inventory and pickup
+#         menus.
+
+#         When sort_menus = false (the default), items are not sorted, and
+#         will be ordered by inventory letter (or in the order they're
+#         stacked for items on the floor).
+
+#         When sort_menus = true, items are sorted according to the specified
+#         sort_order, with the default being:
+#              equipped, basename, qualname, curse, qty
+
+#         If sort_menus = auto:X, items are sorted if there are at least
+#         X items in the same category. For instance:
+#              sort_menus = auto:5
+#         will sort item classes that have at least 5 items. For instance,
+#         having 4 kinds of potions would not sort them, but having 5
+#         would.
+
+#         You can explicitly specify sort criteria in the sort_menus
+#         option as:
+#              sort_menus = true : art, basename, qualname, curse, qty
+
+#         Two items will be compared based on the first sort criteria
+#         where they differ. So with the sort_menus line given above,
+#         if only one of two different items is a known artefact, it will be
+#         listed first, else (if both or neither are artefacts) if their
+#         basenames are different they will be alphabetically compared using
+#         their basenames; if the basenames are the same but the qualified
+#         names are different it will compare their qualified names, and so
+#         on.
+
+#         The available sort criteria are:
+
+#         * basename:
+#           This is the name of the item type. The basename for all of
+#           "a +0 robe", "an embroidered robe" and "the cursed +2 robe of
+#           Ponies" is just "robe". The basename for both of "a brass
+#           ring" and "a ring of fire resistance" are "ring".
+
+#         * qualname:
+#           The name of the item without articles (a/an/the), quantities,
+#           enchantments, or curse-status. The qualified names for the
+#           robes described above are "robe", "embroidered robe" and "robe
+#           of Ponies", respectively. The qualified names for the rings
+#           described above are "brass ring" and "ring of fire
+#           resistance", respectively.
+
+#         * fullname:
+#           This is the name of the item as displayed in menus (including
+#           (quantities, curse-status, etc.)
+
+#         * dbname:
+#           Sorts based on an item's unique internal name which is linked
+#           to its description. Items with the same description will be
+#           grouped together.
+
+#         * curse:
+#           Curse-status of the item (if known). Uncursed items show up
+#           first.
+
+#         * equipped:
+#           Equipped items show up first.
+
+#         * art:
+#           Identified artefacts show up first.
+
+#         * ego:
+#           Identified ego items show up first.
+
+#         * glowing:
+#           Unidentified glowing/shiny/runed/etc items show up first.
+
+#         * identified:
+#           Identified items show up before unidentified ones of the
+#           same type. An item is regarded as identified once you know
+#           its subtype or ego.
+
+#         * qty:
+#           The quantity for stackable items (such as scrolls, potions,
+#           etc.)
+
+#         * slot:
+#           The inventory letter for items in inventory; irrelevant for
+#           items on the floor.
+
+#         * charged:
+#           Makes wands known or assumed to have some charges left appear
+#           before wands known to be empty; irrelevant for all other item
+#           types.
+
+#         You can ask for a descending order sort by prefixing one or more
+#         sort criteria with > as:
+#              sort_menus = true : basename, >qty
+
+#         You can also request sorting only for specific menus:
+#              sort_menus = pickup: true
+#         or
+#              sort_menus = inv: true
+#         (Menu types must be specified as name:, with no space between
+#         name and colon.)
+
+#         By default only pickup menus are sorted, and the sort criteria are:
+#              "equipped, basename, qualname, curse, qty".
+#         All other menus (drop, inv) will be sorted by inventory letter.
+
+#         The menu selectors available are:
+
+#         pickup: All pickup menus, stash-search menus, etc. for items not
+#                 in your inventory.
+#         drop:   The item drop menu.
+#         inv:    Inventory listings for any command (but not for dropping
+#                 items).
+#         any:    All menus; this is the default when unspecified.
+
+#         For example,
+#              sort_menus = true : equipped, basename, qualname, curse, qty
+#         will produce the same inventory and drop menus as by default,
+#         with the exception that all worn/wielded items come first. This
+#         can be convenient if you use the '.' command to select
+#         subsequent items.
+#         If you define sort_menus differently for two or more selectors,
+#         the last one matching will always take precedence, i.e. "any"
+#         as last setting would override any of the others.
+
+# for all menus (unspecified)
+# ignore equipped status for sorting
+sort_menus = true : identified , curse , art , ego , basename , qualname, >qty
+# sort equipped items to top
+# sort_menus = true : equipped , identified , curse , art , ego , basename , qualname, >qty
+# sort by quantity first
+# sort_menus = true : >qty , identified , curse , art , ego , basename , qualname, equipped, >qty
+
+#####################
+### Ability slots ###
+#####################
+
+ability_slot += Fly|flight:lF
+ability_slot += Stop Flying:L
+ability_slot += Breathe:t
+ability_slot += Invisibility:iv
+# Abilities prone to miskeys.
+ability_slot += Blink:IB
+ability_slot += Berserk:k
+ability_slot += Corrupt:C
+ability_slot += Enter the Abyss:E
+
+###################
+### Spell slots ###
+###################
+
+# Use letters in a word of the spell name at
+#   (1) beginning, (2) end, of words in the spell,
+#   (3) or anywhere from the spell name
+# Some overrides may exist or order may change by preference
+
+# See this dynamic web app for oganizing spell slots in real-time
+# https://codesandbox.io/p/sandbox/dcss-spell-slots-6yxgmc
+
+spell_slot += Absolute Zero:azAZeoEObBsrSRlLuUtT
+spell_slot += Agony:aAyYgGoOnN
+spell_slot += Airstrike:aAeEiIrRsStTkK
+spell_slot += Alistair's Intoxication:aiAIsnSNlLtToOxXcCrR
+spell_slot += Anguish:aAhHnNgGuUiIsS
+spell_slot += Animate Armour:aAerERnNimIMoOuUtT
+spell_slot += Animate Dead:adADeEnNiImMtT
+spell_slot += Animate Skeleton:asASenENkKiImlMLtToO
+spell_slot += Apportation:aAnNpPoOrRtTiI
+spell_slot += Arcjolt:aAtTrRcCjJoOlL
+spell_slot += Beastly Appendage:baBAyeYEpPsStnTNldLDgG
+spell_slot += Blade Hands:bhBHesESlaLAnNdD
+spell_slot += Blink:bBkKlLiInN
+spell_slot += Bolt of Magma:bmBMtaTAoOlgLG
+spell_slot += Borgnjor's Revivification:brBRsnSNoeOEvVgiGIjJfFcCaAtT
+spell_slot += Borgnjor's Vile Clutch:bvcBVCsehSEHoilOILruRUgtGTnNjJ
+spell_slot += Call Canine Familiar:cfCFlerLERaAnmNMiI
+spell_slot += Call Imp:ciCIlpLPamAM
+spell_slot += Cause Fear:cfCFerERaAuUsS
+spell_slot += Chain Lightning:clCLngNGhiHIaAtT
+spell_slot += Cigotuvi's Dreadful Rot:cdrCDRsltSLTioIOgeGEaAufUFvV
+spell_slot += Confusing Touch:ctCTghGHoOnuNUfFsSiI
+spell_slot += Conjure Ball Lightning:cblCBLegEGoaiOAInNjhJHutUTrR
+spell_slot += Conjure Flame:cfCFeEolOLnaNAjmJMuUrR
+spell_slot += Corona:cCaAoOrRnN
+spell_slot += Corpse Rot:crCRetEToOpPsS
+spell_slot += Dazzling Flash:dfDFghGHalALzZsSiInN
+spell_slot += Death Channel:dcDChlHLeEaAtnTN
+spell_slot += Death's Door:dDsrSReoEOaAtThH
+spell_slot += Discord:dDiIsScCoOrR
+spell_slot += Disjunction:JdDnNiIsSjJuUcCtToO
+spell_slot += Dispel Undead:duDUlLinINsSpePEaA
+spell_slot += Dispersal:dDlLiIsSpPeErRaA
+spell_slot += Dragon Form:dfDFnmNMroROaAgG
+spell_slot += Dragon's Call:dcDCslSLraRAgGoOnN
+spell_slot += Enfeeble:eEnNfFbBlL
+spell_slot += Ensorcelled Hibernation:ehEHdnDNiIsbSBoOrRcCaAltLT
+spell_slot += Eringya's Noxious Bog:enbENBsgSGroROixIXyuYUaA
+spell_slot += Excruciating Wounds:ewEWgsGSxoXOcuCUrnRNdDiIaAtT
+spell_slot += Fire Storm:fsFSemEMitITroRO
+spell_slot += Fireball:fFlLiIrReEbBaA
+spell_slot += Flame Wave:fwFWeElaLAvVmM
+spell_slot += Foxfire:fFeEoOxXiIrR
+spell_slot += Freeze:fFeErRzZ
+spell_slot += Freezing Cloud:fcFCgdGDrlRLeoEOuUzZiInN
+spell_slot += Frozen Ramparts:frFRnsNSaAomOMzpZPeEtT
+spell_slot += Fulminant Prism:fpFPtmTMurURliLIsSnNaA
+spell_slot += Gell's Gravitas:gGsSerERlaLAvViItT
+spell_slot += Hailstorm:hHmMaAiIlLsStToOrR
+spell_slot += Haunt:hHtTaAuUnN
+spell_slot += Hydra Form:hfHFamAMyoYOdrDR
+spell_slot += Ice Form:ifIFemEMcoCOrR
+spell_slot += Ignite Poison:ipIPenENgoGOsStT
+spell_slot += Ignition:iInNgGtToO
+spell_slot += Infestation:iInNfFeEsStTaAoO
+spell_slot += Inner Flame:ifIFreREnlNLaAmM
+spell_slot += Invisibility:iIyYnNvVsSbBlLtT
+spell_slot += Iron Shot:isISntNTrhRHoO
+spell_slot += Irradiate:iIeErRaAdDtT
+spell_slot += Iskenderun's Battlesphere:ibIBseSEaAktKTnlNLdDrpRPuhUH
+spell_slot += Iskenderun's Mystic Blast:imbIMBsctSCTylYLkaKAeEnNdDrRuU
+spell_slot += Kiss of Death:kdKDshSHieIEaAtT
+spell_slot += Leda's Liquefaction:lLsnSNeiEIdqDQauAUfFcCtToO
+spell_slot += Lee's Rapid Deconstruction:lrdLRDsnSNeaEApcPCioIOtTuU
+spell_slot += Lehudib's Crystal Spear:lcsLCSrRepEPhyHYuaUAdtDTiIbB
+spell_slot += Lesser Beckoning:lbLBrgRGeEscSCkKoOnNiI
+spell_slot += Lightning Bolt:lbLBgtGTioIOhHnN
+spell_slot += Magic Dart:mdMDctCTaAgrGRiI
+spell_slot += Malign Gateway:mgMGnyNYaAltLTieIEwW
+spell_slot += Manifold Assault:maMAdtDTsSnNiIfuFUolOL
+spell_slot += Maxwell's Capacitive Coupling:mcMCsegSEGaoAOxpuXPUwWlLiItnTNvV
+spell_slot += Mephitic Cloud:mcMCdDelELpoPOhuHUiItT
+spell_slot += Metabolic Englaciation:meMEcnCNtgTGalALbBoOiI
+spell_slot += Momentum Strike:msMSeEotOTrRiInkNKuU
+spell_slot += Monstrous Menagerie:mMseSEoOnNaAtgTGrRuiUI
+spell_slot += Necromutation:nNeEcCrRoOmMuUtTaAiI
+spell_slot += Necrotise:nNeEcCrRoOtTiIsS
+spell_slot += Olgreb's Toxic Radiance:otrOTRsceSCElaLAgxdGXDiIbnBN
+spell_slot += Orb of Destruction:odODbnBNreREsStTuUcCiI
+spell_slot += Ozocubu's Armour:oaOAsrSRzZmMcCuUbB
+spell_slot += Ozocubu's Refrigeration:orORsnSNzeZEfFcCuiUIbgBGaAtT
+spell_slot += Pain:pPnNaAiI
+spell_slot += Passage of Golubria:pgPGeaEAoOslSLuUbBrRiI
+spell_slot += Passwall:pPlLaAsSwW
+spell_slot += Petrify:pPyYeEtTrRiIfF
+spell_slot += Plasma Beam:pbPBamAMleLEsS
+spell_slot += Poisonous Vapours:pvPVsSoaOAiIuUnrNR
+spell_slot += Polar Vortex:pvPVrxRXoOlLatATeE
+spell_slot += Portal Projectile:pPleLEorORtjTJaAcCiI
+spell_slot += Sandblast:sStTaAnNdDbBlL
+spell_slot += Scorch:sShHcCoOrR
+spell_slot += Searing Ray:srSRgyGYeaEAiInN
+spell_slot += Shadow Creatures:scSCwWhrHRaeAEdDotOTuU
+spell_slot += Shatter:sSrRhHaAtTeE
+spell_slot += Shock:sSkKhHoOcC
+spell_slot += Silence:sSeEiIlLnNcC
+spell_slot += Simulacrum:sSmMiIuUlLaAcCrR
+spell_slot += Slow:sSwWlLoO
+spell_slot += Spellforged Servitor:sSdrDRpePElvLViIftFToOgG
+spell_slot += Spider Form:sfSFrmRMpoPOiIdDeE
+spell_slot += Starburst:sStTaArRbBuU
+spell_slot += Static Discharge:sdSDceCEtiTIaAhHrRgG
+spell_slot += Statue Form:sfSFemEMtoTOarARuU
+spell_slot += Sticky Flame:sfSFyeYEtlTLiaIAcmCMkK
+spell_slot += Sting:sSgGtTiInN
+spell_slot += Stone Arrow:saSAewEWtrTRoOnN
+spell_slot += Storm Form:sfSFmMtoTOrR
+spell_slot += Sublimation of Blood:sbSBndNDulULoOiImMaAtT
+spell_slot += Summon Cactus Giant:scgSCGntNTuaiUAImMoO
+spell_slot += Summon Demon:sdSDnNueUEmMoO
+spell_slot += Summon Forest:sfSFntNTuoUOmrMReE
+spell_slot += Summon Greater Demon:sgdSGDnrNRueUEmMaoAOtT
+spell_slot += Summon Guardian Golem:sgSGnmNMuoUOalALreREdDiI
+spell_slot += Summon Horrible Things:shtSHTneNEuoUOmriMRIgGbBlL
+spell_slot += Summon Hydra:shSHnaNAuyUYmdMDrRoO
+spell_slot += Summon Ice Beast:sibSIBnetNETucUCmaMAoO
+spell_slot += Summon Lightning Spire:slSLngeNGEuipUIPmMhrHRotOT
+spell_slot += Summon Mana Viper:smvSMVnarNARuiUIpPeEoO
+spell_slot += Summon Small Mammal:smSMnlNLuaUAoO
+spell_slot += Swiftness:sSwWiIfFtTnNeE
+spell_slot += Teleport Other:toTOrReElhLHpP
+spell_slot += Tornado:tToOrRnNaAdD
+spell_slot += Tukima's Dance:tdTDseSEuaUAknKNicICmM
+spell_slot += Vampiric Draining:vdVDcgCGarARmMpiPInN
+spell_slot += Vhi's Electric Charge:vecVECsShlHLiaIArRtgTG
+spell_slot += Volatile Blastmotes:vbVBesESolOLaAtTimIM
+spell_slot += Wereblood:wWdDeErRbBlLoO
+spell_slot += Yara's Violent Unravelling:yvuYVUstgSTGainAINroROlLeE
+
+# Default letters
+spell_slot += .*:XYZ
+
+##################
+### Item slots ###
+##################
+
+## In order of letter used.
+item_slot += amulet of rage : B
+item_slot += ring of (ice|protection from cold) : Cc
+item_slot += amulet of the acrobat : A
+item_slot += \+[0-9]+ ring of evasion : Ee
+item_slot += ring of .*fire : Ff
+item_slot += amulet of regeneration : g
+item_slot += amulet of guardian spirit : G
+item_slot += amulet of faith : T
+item_slot += \+[0-9]+ ring of intelligence : Ii
+item_slot += ring of flight : L
+item_slot += ring of protection from magic : Mm
+item_slot += ring of positive energy : Nn
+item_slot += \+[0-9]+ ring of protection : Oo
+item_slot += ring of poison resistance : P
+item_slot += ring of resist corrosion : R
+item_slot += amulet of mana regeneration : r
+item_slot += \+[0-9]+ ring of strength : Ss
+item_slot += ring of see invisible : v
+item_slot += ring of magical power : Ww
+item_slot += \+[0-9]+ ring of dexterity : Dd
+item_slot += \+[0-9]+ ring of slaying : Yy
+item_slot += ring of wizardry : Zz
+
+# 0.26 holdback
+item_slot += ring of stealth : Qq
+item_slot += ring of teleportation : t

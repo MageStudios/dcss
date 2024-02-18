@@ -1,0 +1,92 @@
+: if you.race() == "Mummy" then
+autopickup = (/?"+|}$
+: elseif you.race() == "Vampire" then
+autopickup = (/?"!+|}$
+# Felids are hard.
+: elseif you.race() == "Felid" then
+autopickup = /?"!+}$
+: else
+autopickup = (/?"!+|}$
+: end
+# )       Weapons
+# (       Missiles
+# [       Armour
+# /       Wands
+# %       Food
+# ?       Scrolls
+# " or =  Jewellery
+# !       Potions
+# + or :  Books
+# |       Staves
+# 0       Orbs
+# }       Miscellaneous
+# $       Gold
+# Note that _whether_ items are picked up automatically or not, is
+# controlled by the in-game toggle Ctrl-A. Also note that picking
+# up takes a turn, but only one turn (regardless of the number of
+# items). If you teleport or blink onto a square with interesting
+# items, these will not be picked up.
+
+ae := autopickup_exceptions
+
+# Reset all autopickup exceptions
+ae =
+
+# Small & Little races cannot carry javelins
+: if table_has({"Halfling", "Kobold", "Felid", "Spriggan"}, you.race()) then
+ae += >javelin
+: end
+
+# Only Troll & Ogre pickup large rocks
+: if not table_has({"Ogre", "Troll"}, you.race()) then
+ae += >large rock
+: end
+
+# Jewellery
+: if table_has({"Gargoyle", "Vampire", "Mummy", "Ghoul"}, you.race()) then
+ae += >rings? of (poison resistance)
+: end
+: if table_has({"Deep Dwarf"}, you.race()) then
+ae += >amulets? of (regeneration)
+: end
+
+# Scrolls
+: if table_has({"Vampire", "Mummy", "Ghoul"}, you.race()) then
+ae += >scrolls? of (holy word)
+: else
+ae += <scrolls? of (holy word)
+:end
+
+: if table_has({"Formicid"}, you.race()) then
+ae += >scrolls? of (teleportation|blinking)
+ae += >potions? of (haste|berserk rage)
+: else
+ae += <scrolls? of (teleportation|blinking)
+:end
+
+ae += <scrolls? of (vulnerability|immolation|torment)
+ae += >scrolls? of (amnesia|noise)
+
+# Potions
+ae += <potions? of (mutation|lignification)
+ae += >potions? of (degeneration)
+
+# Tengu do not need flying
+: if table_has({"Tengu"}, you.race()) then
+ae += >potions? of (flight)
+: end
+
+# Miscellaneous
+ae += <(tins of tremorstones)
+
+# Pickup runes but not 'runed' anything
+ae += <rune(s)?[^d]
+
+# IMPORTANT: Do not auto pickup the Orb of Zot
+ae += >orb of Zot
+
+
+# 0.26 holdback
+ae += >amulets? of (inaccuracy)
+ae += >rings? of (teleportation|attention)
+ae += >scrolls? of (random uselessness)
