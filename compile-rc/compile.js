@@ -5,7 +5,7 @@ const FSUtils = require('./utils/fs');
 const PartsUtils = require('./utils/parts');
 
 const TEMPLATE_FILENAME = path.join(__dirname, '_template.rc');
-const OUTPUT_FILENAME = 'output/magus.rc';
+const OUTPUT_FILENAME = 'output/SlipMage.rc';
 
 const RAW_RELEASES = path.join(__dirname, '_releases');
 const RELEASES_LOG = 'RELEASES.md';
