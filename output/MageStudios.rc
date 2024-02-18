@@ -1,5 +1,5 @@
 ##
-## magus.rc
+## MageStudios.rc
 ################################################################################################
 
 ##
@@ -16,7 +16,7 @@ CONFIG.emojis = true
 ##
 ## BEGIN
 ################################################################################################
-: rc_msg("Initializing magus.rc ...")
+: rc_msg("Initializing MageStudios.rc ...")
 : crawl.enable_more(false)
 
 ##### Crawl Init file ###############################################
@@ -615,7 +615,7 @@ function note_version()
     return
   end
 
-  local version = "magus.rc [v1.11.7]"
+  local version = "MageStudios.rc [v1.11.7]"
   crawl.take_note(version)
   didRun = true
 end
@@ -4966,5 +4966,5 @@ msc ^= mute:is almost (dead|destroyed)
 ##
 ## END
 ################################################################################################
-: rc_scs("Successfully initialized magus.rc [v1.11.7]")
+: rc_scs("Successfully initialized MageStudios.rc [v1.11.7]")
 : crawl.enable_more(true)

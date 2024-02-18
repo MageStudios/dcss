@@ -1,6 +1,6 @@
 # Runbook
 
-After making edits to [`_template.rc`](https://github.com/magus/dcss/blob/master/compile-rc/_template.rc) or the associated files under the [`parts`](https://github.com/magus/dcss/tree/master/compile-rc/parts) directory, you can run `yarn compile` to build the new customized RC file. It will also be **copied to your clipboard** for your convenience.
+After making edits to [`_template.rc`](https://github.com/MageStudios/dcss/blob/master/compile-rc/_template.rc) or the associated files under the [`parts`](https://github.com/MageStudios/dcss/tree/master/compile-rc/parts) directory, you can run `yarn compile` to build the new customized RC file. It will also be **copied to your clipboard** for your convenience.
 
 ## Generate local rc
 

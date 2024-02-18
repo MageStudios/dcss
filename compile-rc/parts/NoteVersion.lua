@@ -4,7 +4,7 @@ function note_version()
     return
   end
 
-  local version = "magus.rc [{{VERSION}}]"
+  local version = "MageStudios.rc [{{VERSION}}]"
   crawl.take_note(version)
   didRun = true
 end

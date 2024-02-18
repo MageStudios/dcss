@@ -2,7 +2,7 @@
   "name": "dcss",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "git@github.com:magus/dcss.git",
+  "repository": "git@github.com:MageStudios/dcss.git",
   "author": "SlipMage",
   "license": "MIT",
   "scripts": {

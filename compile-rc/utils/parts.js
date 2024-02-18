@@ -20,7 +20,7 @@ function Begin(args) {
 ##
 ## BEGIN
 ################################################################################################
-: rc_msg("Initializing magus.rc ...")
+: rc_msg("Initializing MageStudios.rc ...")
 `.trim();
 }
 
@@ -31,7 +31,7 @@ function End(args) {
 ##
 ## END
 ################################################################################################
-: rc_scs("Successfully initialized magus.rc [{{VERSION}}]")
+: rc_scs("Successfully initialized MageStudios.rc [{{VERSION}}]")
 `.trim();
 }
 

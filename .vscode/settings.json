@@ -3,6 +3,6 @@
     "*.rc": "diff"
   },
   "search.exclude": {
-    "output/magus.rc": true
+    "output/MageStudios.rc": true
   }
 }

@@ -1,6 +1,6 @@
 # Newest RC
 
-https://raw.githubusercontent.com/magus/dcss/v1.0.0/output/MageStudios.rc
+https://raw.githubusercontent.com/MageStudios/dcss/v1.0.0/output/MageStudios.rc
 
 # What's new?
 

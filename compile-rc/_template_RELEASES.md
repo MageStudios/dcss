@@ -1,6 +1,6 @@
 # Newest RC
 
-https://raw.githubusercontent.com/magus/dcss/{{LatestVersion}}/output/magus.rc
+https://raw.githubusercontent.com/MageStudios/dcss/{{LatestVersion}}/output/MageStudios.rc
 
 # What's new?
 
@@ -10,7 +10,7 @@ Follow the instructions below to easily see the differences!
 
 1. Copy your **Version** string
 
-    ![Example screenshot highlighting magus.rc version string](https://raw.githubusercontent.com/magus/dcss/master/static/version-string-example.97956d.png)
+    ![Example screenshot highlighting MageStudios.rc version string](https://raw.githubusercontent.com/MageStudios/dcss/master/static/version-string-example.97956d.png)
 
     _Example_
     ```
@@ -20,14 +20,14 @@ Follow the instructions below to easily see the differences!
 1. Using the URL below, replace **`<Version>`** with your **Version**
 
     ```
-    https://github.com/magus/dcss/compare/<Version>...{{LatestVersion}}
+    https://github.com/MageStudios/dcss/compare/<Version>...{{LatestVersion}}
     ```
-    _Example_: https://github.com/magus/dcss/compare/{{ExampleVersion}}...{{LatestVersion}}
+    _Example_: https://github.com/MageStudios/dcss/compare/{{ExampleVersion}}...{{LatestVersion}}
 
 1. Paste the new URL into your browser and discover all the changes since you last copied the RC, Enjoy! 😄
 
 
 # Releases
 
-https://github.com/magus/dcss/releases
+https://github.com/MageStudios/dcss/releases
 
