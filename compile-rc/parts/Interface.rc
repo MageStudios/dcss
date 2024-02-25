@@ -18,6 +18,9 @@ allow_self_target = no
 # even when you've got plenty of time left. defaults to `false`
 always_show_zot = true
 
+# How long till the current gem on the current branch shatters.
+always_show_gem = true
+more_gem_info = true
 
 # Monster colors
 ###########################

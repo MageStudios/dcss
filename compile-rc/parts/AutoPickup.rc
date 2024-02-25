@@ -1,13 +1,3 @@
-: if you.race() == "Mummy" then
-autopickup = (/?"+|}$
-: elseif you.race() == "Vampire" then
-autopickup = (/?"!+|}$
-# Felids are hard.
-: elseif you.race() == "Felid" then
-autopickup = /?"!+}$
-: else
-autopickup = (/?"!+|}$
-: end
 # )       Weapons
 # (       Missiles
 # [       Armour
@@ -26,6 +16,17 @@ autopickup = (/?"!+|}$
 # up takes a turn, but only one turn (regardless of the number of
 # items). If you teleport or blink onto a square with interesting
 # items, these will not be picked up.
+
+: if you.race() == "Mummy" then
+autopickup = (/?"+|}$
+: elseif you.race() == "Vampire" then
+autopickup = (/?"!+|}$
+# Felids are hard.
+: elseif you.race() == "Felid" then
+autopickup = /?"!+}$
+: else
+autopickup = (/?"!+|}$
+: end
 
 ae := autopickup_exceptions
 
